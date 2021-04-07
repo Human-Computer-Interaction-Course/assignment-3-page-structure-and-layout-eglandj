@@ -57,16 +57,18 @@ footer{
     margin-top: 100px;
 }
 
+/* main body grid container */
 #main_container{
     grid-area: main;
     border: 1px solid #FFB001;
+    display: grid;
     margin-top: 100px;
     border-radius: 100px;
     background-color: #0E0F1B;
-    opacity: 90%;
-    display: grid;
-    
+    opacity: 93%;
 }
+
+
 
 /* Grid inside header*/
 #grid_header{
@@ -79,6 +81,7 @@ footer{
 
 }
 
+/* Items within the header */
 #logo_home{
     grid-area: logo;
     height: 100%;
@@ -88,13 +91,12 @@ footer{
 #title{
     grid-area: title;
     color: lightgray;
-    font-size: 400%;
+    font-size: 200%;
     letter-spacing: 5px;
     text-decoration: none;
     padding-left: 2%;
     align-self: center;
     justify-self: center;
-    ;
 }
 #title:hover{ color: #FFB001;}
 
@@ -171,12 +173,16 @@ footer{
     border: 2px solid #FFB001;
 }
 
+/* footer containter starts here */
 #footer_container{
     display: grid;
-    grid-template: 100px / 1fr 1fr 1fr 1fr 1fr 3fr;
-    grid-template-areas: '. about contact policies faq icons';
+    grid-template: 100px / 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-areas: 
+        '. about contact policies faq . icons';
+        justify-content: center;
 }
 
+/* Items wthin footer container */
 #about_us{
     grid-area: about;
     color: lightgray;
@@ -223,19 +229,25 @@ footer{
 
 #icon_container{
     grid-area: icons;
-    height: 100%;
-    display: flex;
+    height: 85%;
+    align-self: center;
     justify-content: space-evenly;
 }
 
 .logos{
+    height: 100%;
+    float: none;
     align-self: center;
-    justify-self: center;
-    height: 100px;
-    color: #FFB001;
+    margin-left: 5%;
+}
+
+#twitter_img{
+    grid-area: twitter;
+    height: 100%;
 }
 
 .icon_logos{
     text-decoration: none;
+    justify-self: center;
 }
 
