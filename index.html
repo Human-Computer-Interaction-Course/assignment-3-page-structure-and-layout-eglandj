@@ -14,6 +14,7 @@
 		
 		<!--Resourcing Google Font-->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!--Internal CSS Styling below-->
 		<style>
             
@@ -23,14 +24,41 @@
 	</head>
     <body>
         <div id="grid_container">
-            <header id="flex_header">
-                <img id="logo_home" src="images/logo.jpg" alt="main logo">
-                <h1 id="title">Sport Statistics calculators</h1>
+            <header id="grid_header">
+                <a href="./index.html">
+                    <img id="logo_home" src="images/logo.jpg" alt="main logo">
+                </a>
+                <a id="title" class="header_link" href="./index.html">Sports Statstic Calculators</a>
+                <a id="sign_up" class="header_link" href="">SignUp</a>
+                <form class="search_form" action="">
+                    <input id="search_bar" type="text" placeholder="Search..">
+                    <button id="submit_bttn" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <a id="login" class="header_link" href="">Login</a>
+                <a id="account" href="">
+                    <img id="account_img" src="images/user_account.jpg" alt="main logo">
+                </a>
+                
             </header>
             <main id='main_container'>
 
             </main>
-            <footer>
+            <footer id="footer_container">
+                <a id="about_us" class="header_link" href="">About Us</a>
+                <a id="contact_us" class="header_link" href="">Contact Us</a>
+                <a id="policies" class="header_link" href="">Policies</a>
+                <a id="faq" class="header_link" href="">FAQ</a>
+                <div id="icon_container">
+                    <a class="icon_logos" id="twitter_logo" href="">
+                        <img class="logos" src="images/facebook_icon.png">
+                    </a>
+                    <a class="icon_logos" href="">
+                        <img class="logos" src="images/twitter_icon.png">
+                    </a>
+                    <a class="icon_logos" href="">
+                        <img class="logos" src="images/instagram_icon.png">
+                    </a>
+                </div>
 
             </footer>
         </div>

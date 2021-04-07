@@ -22,7 +22,8 @@
 }
 
 *{
-    font-family: "highjersey";
+    font-family: "runboy";
+   
 }
 
 body{
@@ -31,54 +32,210 @@ body{
     background-size: cover;
 }
 
+/* Web page grid container*/
 #grid_container{
     display: grid;
-    grid-template: 100px 1000px 100px / 200px 1fr 1fr 1fr 200px;
+    grid-template: 100px 1000px 100px / 10% 1fr 1fr 1fr 10%;
     grid-template-areas: 
         'header header header header header'
         '... main main main ...'
         'footer footer footer footer footer';
 }
 
-#title{
-    border: 2px solid #FFB001;
-    margin: auto;
-    color: azure;
-    font-size: 300%;
-    letter-spacing: 5px;
-
-}
-
-#flex_header{
-    display: flex;
-
-}
-
 header{
     grid-area: header;
-    border: 2px solid #FFB001;
+    border-bottom: 1px solid #FFB001;
     height: 100px;
     background-color: #0E0F1B;
-}
-
-#main_container{
-    grid-area: main;
-    border: 2px solid #FFB001;
-    display: grid;
-    margin-top: 100px;
-    border-radius: 100px;
-    background-color: #0E0F1B;
-    opacity: 90%;
 }
 
 footer{
     grid-area: footer;
-    border: 2px solid #FFB001;
+    border-top: 1px solid #FFB001;
     height: 100px;
     background-color: #0E0F1B;
     margin-top: 100px;
 }
 
+#main_container{
+    grid-area: main;
+    border: 1px solid #FFB001;
+    margin-top: 100px;
+    border-radius: 100px;
+    background-color: #0E0F1B;
+    opacity: 90%;
+    display: grid;
+    
+}
+
+/* Grid inside header*/
+#grid_header{
+    display: grid;
+    align-content: center;
+    grid-template: 100px / 100px 8fr 1fr 1fr 1fr 100px;
+    grid-template-areas: 
+        'logo title search signup login account';
+    
+
+}
+
 #logo_home{
+    grid-area: logo;
     height: 100%;
 }
+#logo_home:hover{ opacity: 85%;}
+
+#title{
+    grid-area: title;
+    color: lightgray;
+    font-size: 400%;
+    letter-spacing: 5px;
+    text-decoration: none;
+    padding-left: 2%;
+    align-self: center;
+    justify-self: center;
+    ;
+}
+#title:hover{ color: #FFB001;}
+
+.search_form{
+    grid-area: search;
+    align-self: center;
+    display: grid;
+    justify-items: start;
+    align-items:initial;
+}
+
+.search_form > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#search_bar{
+    align-self: center;
+    justify-self: right;
+    width: 300px;
+    border-radius: 20px;
+    font-size: 150%;
+    padding-left: 3%;
+    height: 30px;
+}
+
+#submit_bttn{
+    cursor: pointer;
+    justify-self: right;
+    align-self: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 35px;
+    padding-left: 3%;
+    padding-right: 5%;
+}
+
+#sign_up{
+    grid-area: signup;
+    /*border: 2px solid #FFB001;*/
+    color: lightgray;
+    text-decoration: none;
+    font-size: 180%;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: right;
+}
+#sign_up:hover{ color: #FFB001;}
+
+#login{
+    grid-area: login;
+    /*border: 2px solid #FFB001;*/
+    color: lightgray;
+    text-decoration: none;
+    font-size: 180%;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: center;
+}
+#login:hover{ color: #FFB001;}
+
+#account{
+    grid-area: account;
+    height: 85%;
+    border-radius: 100%;
+    align-self: center;
+    justify-self: center;
+}
+#account:hover{ opacity: 85%;}
+
+#account_img{
+    height: 100%;
+    border-radius: 100%;
+    border: 2px solid #FFB001;
+}
+
+#footer_container{
+    display: grid;
+    grid-template: 100px / 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-areas: '. about contact policies faq icons';
+}
+
+#about_us{
+    grid-area: about;
+    color: lightgray;
+    text-decoration: none;
+    font-size: 180%;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: center;
+}
+#about_us:hover{ color: #FFB001;}
+
+#contact_us{
+    grid-area: contact;
+    color: lightgray;
+    text-decoration: none;
+    font-size: 180%;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: center;
+}
+#contact_us:hover{ color: #FFB001;}
+
+#policies{
+    grid-area: policies;
+    color: lightgray;
+    text-decoration: none;
+    font-size: 180%;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: center;
+}
+#policies:hover{ color: #FFB001;}
+
+#faq{
+    grid-area: faq;
+    color: lightgray;
+    text-decoration: none;
+    font-size: 180%;
+    letter-spacing: 3px;
+    align-self: center;
+    justify-self: center;
+}
+#faq:hover{ color: #FFB001;}
+
+#icon_container{
+    grid-area: icons;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logos{
+    align-self: center;
+    justify-self: center;
+    height: 100px;
+    color: #FFB001;
+}
+
+.icon_logos{
+    text-decoration: none;
+}
+
