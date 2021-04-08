@@ -23,6 +23,7 @@
 
 *{
     font-family: "runboy";
+    text-decoration: none;
    
 }
 
@@ -35,7 +36,7 @@ body{
 /* Web page grid container*/
 #grid_container{
     display: grid;
-    grid-template: 100px 1000px 100px / 10% 80% 10%;
+    grid-template: 1fr 5fr 1fr / 1fr 8fr 1fr;
     grid-template-areas: 
         'header header header '
         '... main ...'
@@ -46,7 +47,7 @@ header{
     grid-area: header;
     position: fixed; 
     border-bottom: 1px solid #FFB001;
-    height: 100px;
+    height: 10vh;
     background-color: #0E0F1B;
     z-index: 1;
 }
@@ -55,9 +56,9 @@ header{
 footer{
     grid-area: footer;
     border-top: 1px solid #FFB001;
-    height: 100px;
+    height: 10vh;
     background-color: #0E0F1B;
-    margin-top: 100px;
+    margin-top: 10vh;
 }
 
 /* main body grid container */
@@ -65,27 +66,35 @@ footer{
     grid-area: main;
     border: 1px solid #FFB001;
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-template: auto auto auto / auto auto auto;
     grid-template-areas: 
         'baseball basketball football'
         'golf gymnastics hockey';
-    margin-top: 100px;
     border-radius: 100px;
     background-color: #0E0F1B;
     opacity: 93%;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+h2{
+    color: lightgray;
+}
+
+h2:hover{
+    color: #FFB001;
 }
 
 .tags{
-    color: lightgray;
     text-align: center;
     letter-spacing: 0.4rem;
 }
+
 .sports_icons{
-    border: 1px solid #FFB001;
-    height: 50%;
-    width: 60%;
+    height: 60%;
+    width: 55%;
     justify-self: center;
-    align-self: center;
+    align-self: auto;
 }
 
 #baseball{
@@ -95,6 +104,7 @@ footer{
     height: 100%;
     width: 100%;
 }
+#baseball:hover{ opacity: 85%; }
 
 #basketball{
     grid-area: basketball;
@@ -164,22 +174,28 @@ footer{
 #grid_header{
     display: grid;
     align-content: center;
-    grid-template: 100px / 100px 8fr 1fr 1fr 1fr 100px;
+    grid-template: 10vh / 1fr 7fr 1fr 1fr 1fr 10vh;
     grid-template-areas: 
         'logo title search signup login account';
 }
 
 /* Items within the header */
-#logo_home{
+#logo_container{
     grid-area: logo;
+    width: 6vh;
+}
+
+#logo_home{
     height: 100%;
+    align-self: center;
+    justify-self: center;
 }
 #logo_home:hover{ opacity: 85%;}
 
 #title{
     grid-area: title;
     color: lightgray;
-    font-size: 200%;
+    font-size: 3vh;
     letter-spacing: 5px;
     text-decoration: none;
     padding-left: 2%;
@@ -204,11 +220,11 @@ footer{
 #search_bar{
     align-self: center;
     justify-self: right;
-    width: 300px;
-    border-radius: 20px;
-    font-size: 150%;
+    border-radius: 2vh;
+    font-size: 2vh;
     padding-left: 3%;
-    height: 30px;
+    height: 3vh;
+    width: 15vw;
 }
 
 #submit_bttn{
@@ -217,9 +233,10 @@ footer{
     align-self: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 35px;
+    height: 3.2vh;
     padding-left: 3%;
     padding-right: 5%;
+    border-width: 0;
 }
 
 #sign_up{
@@ -227,7 +244,7 @@ footer{
     /*border: 2px solid #FFB001;*/
     color: lightgray;
     text-decoration: none;
-    font-size: 180%;
+    font-size: 3vh;
     letter-spacing: 3px;
     align-self: center;
     justify-self: right;
@@ -239,7 +256,7 @@ footer{
     /*border: 2px solid #FFB001;*/
     color: lightgray;
     text-decoration: none;
-    font-size: 180%;
+    font-size: 3vh;
     letter-spacing: 3px;
     align-self: center;
     justify-self: center;
@@ -248,7 +265,7 @@ footer{
 
 #account{
     grid-area: account;
-    height: 85%;
+    height: 7vh;
     border-radius: 100%;
     align-self: center;
     justify-self: center;
@@ -264,7 +281,7 @@ footer{
 /* footer containter starts here */
 #footer_container{
     display: grid;
-    grid-template: 100px / 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template: 10vh / 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
     grid-template-areas: 
         '. about contact policies faq . icons';
         justify-content: center;
@@ -275,7 +292,7 @@ footer{
     grid-area: about;
     color: lightgray;
     text-decoration: none;
-    font-size: 180%;
+    font-size: 3vh;
     letter-spacing: 3px;
     align-self: center;
     justify-self: center;
@@ -286,7 +303,7 @@ footer{
     grid-area: contact;
     color: lightgray;
     text-decoration: none;
-    font-size: 180%;
+    font-size: 3vh;
     letter-spacing: 3px;
     align-self: center;
     justify-self: center;
@@ -297,7 +314,7 @@ footer{
     grid-area: policies;
     color: lightgray;
     text-decoration: none;
-    font-size: 180%;
+    font-size: 3vh;
     letter-spacing: 3px;
     align-self: center;
     justify-self: center;
@@ -308,7 +325,7 @@ footer{
     grid-area: faq;
     color: lightgray;
     text-decoration: none;
-    font-size: 180%;
+    font-size: 3vh;
     letter-spacing: 3px;
     align-self: center;
     justify-self: center;
@@ -317,7 +334,7 @@ footer{
 
 #icon_container{
     grid-area: icons;
-    height: 85%;
+    height: 6vh;
     align-self: center;
     justify-content: space-evenly;
 }
@@ -327,11 +344,24 @@ footer{
     float: none;
     align-self: center;
     margin-left: 5%;
+    border: 2px solid #0E0F1B;
+}
+
+.logos:hover{
+    opacity: 90%;
+    border: 2px solid #FFB001;
+}
+
+#facebook_img{
+    border-radius: 20%;
 }
 
 #twitter_img{
-    grid-area: twitter;
-    height: 100%;
+    border-radius: 100%;
+}
+
+#insta_img{
+    border-radius: 20%;
 }
 
 .icon_logos{
