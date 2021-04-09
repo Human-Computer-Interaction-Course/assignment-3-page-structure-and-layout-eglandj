@@ -1,24 +1,25 @@
-@font-face {
-    font-family: 'highjersey';
-    src:  url('../fonts/HighJersey.woff2') format('woff2'),
-        url('../fonts/High\ Jersey.woff') format('woff');      
-}
+/*
+    Requirement 1 (Layout Strategy):
+        The three layout are responsive designs
+    
+    Requirement 2 (Color and Graphic Strategy):
+        1) I chose the color scheme based of some sports team colors and then made my final decision based off the 
+           background I found that was close to one of the sports teams colors I chose.
+        2) #0E0F1B, #FFB001, #d3d3d3
+        3) The header, footer, and background for the main container will have the dark blue color and highlighted 
+        with ther yellow for borders around most images and containers in the site. The text will have the gray color so it pops but idoesn't feel like a strain
+        on the eye to look at.
 
-@font-face {
-    font-family: 'highjerseyItalic';
-    src:  url('../fonts/HighJerseyItalic.woff2') format('woff2'),
-        url('../fonts/HighJerseyItalic.woff') format('woff');
-}
+    Requirement 3 (Font Strategy):  
+        1) I will use one font throughout the whole site. Runboy
+        2) The weights will be regular and the size will be based off what heading tag is recieved
+        3) I don't have much for reading other than the single words themself, but they spacing will need to be spread out a bit so the word doesn't feel too compact.
+*/
 
 @font-face {
     font-family: 'runboy';
     src:  url('../fonts/Runboy.woff2') format('woff2'),
     url('../fonts/Runboy.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'basketball';
-    src:  url("../fonts/Basketball.otf") format("woff");
 }
 
 *{
@@ -56,7 +57,7 @@ header{
 footer{
     grid-area: footer;
     border-top: 1px solid #FFB001;
-    height: 10vh;
+    height: 13vh;
     background-color: #0E0F1B;
     margin-top: 10vh;
 }
@@ -67,9 +68,6 @@ footer{
     border: 1px solid #FFB001;
     display: grid;
     grid-template: auto auto auto / auto auto auto;
-    grid-template-areas: 
-        'baseball basketball football'
-        'golf gymnastics hockey';
     border-radius: 100px;
     background-color: #0E0F1B;
     opacity: 93%;
@@ -174,6 +172,7 @@ h2:hover{
 #grid_header{
     display: grid;
     align-content: center;
+    justify-content: center;
     grid-template: 10vh / 1fr 7fr 1fr 1fr 1fr 10vh;
     grid-template-areas: 
         'logo title search signup login account';
@@ -182,7 +181,7 @@ h2:hover{
 /* Items within the header */
 #logo_container{
     grid-area: logo;
-    width: 6vh;
+    width: 10vh;
 }
 
 #logo_home{
@@ -196,7 +195,7 @@ h2:hover{
     grid-area: title;
     color: lightgray;
     font-size: 3vh;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     text-decoration: none;
     padding-left: 2%;
     align-self: center;
@@ -215,6 +214,7 @@ h2:hover{
 .search_form > * {
     grid-column-start: 1;
     grid-row-start: 1;
+    justify-self: center;
 }
 
 #search_bar{
@@ -369,3 +369,196 @@ h2:hover{
     justify-self: center;
 }
 
+@media screen and (max-width: 768px) {
+
+    #main_container{
+        grid-template: auto auto auto auto auto / auto auto;
+        padding-bottom: 5%;
+        justify-content:space-around;
+    }
+    
+    #title{
+        font-size: 1.4vh;
+    }
+    
+    footer{
+        height: 13vh;
+        background-color: #0E0F1B;
+    }
+    
+    #grid_header{
+        width: 100%;
+        grid-template: 10vh / 10vh 4fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'logo title search signup login account';
+        justify-content: center;
+    }
+
+    #search_bar{
+        font-size: 2vh;
+        height: 2vh;
+        width: 15vw;
+        margin-right: 2%;
+    }
+    
+    #submit_bttn{
+        height: 2.2vh;
+        padding-left: 3%;
+        padding-right: 5%;
+    }
+
+    #sign_up{
+        margin-left: 10%;
+        font-size: 2vh;
+    }
+
+    #login{
+        font-size: 2vh;
+    }
+
+    #footer_container{
+        grid-template: 10vh / 1fr 2fr 2fr 2fr 1fr 1fr 3fr 1fr;
+        grid-template-areas: 
+            '. about contact policies faq . icons';
+            justify-content: center;
+            align-self: center;
+    }
+    
+    #about_us{
+        font-size: 2vh;
+    }
+    #contact_us{
+        font-size: 2vh;
+    }
+
+    #policies{
+        font-size: 2vh;
+    }
+    
+    #faq{
+        font-size: 2vh;
+    }
+
+    @media screen and (max-width: 360px) {
+
+        #grid_container{
+            display: grid;
+            grid-template: 15vh 5fr 1fr / 1fr 8fr 1fr;
+            grid-template-areas: 
+                'header header header '
+                '... main ...'
+                'footer footer footer';
+        }
+
+        #main_container{
+            grid-template: auto auto auto auto auto / auto auto;
+            justify-content:space-around;
+            border-radius: 8vh;
+            padding-top: 0%;
+        }
+        
+        #title{
+            font-size: 1vh;
+            justify-self: left;
+        }
+        
+        header{
+            height: 8vh;
+        }
+        
+        footer{
+            height: 13vh;
+            background-color: #0E0F1B;
+        }
+        
+        #grid_header{
+            width: 100%;
+            grid-template: 4vh 4vh / 8vh 5fr 5fr 2fr;
+            grid-template-areas: 
+                'logo title title hamburger'
+                'logo search . hamburger';
+            justify-content: center;
+        }
+
+        #logo_container{
+            grid-area: logo;
+            height: 8vh;
+        }
+
+        #hamburger_container{
+            grid-area: hamburger;
+            float: right;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #hamburger_icon{
+            color: #FFB001;
+            size: 100%;
+        }
+    
+        #search_bar{
+            font-size: 2vh;
+            height: 2vh;
+            width: 30vw;
+            margin-left: 2%;
+        }
+        
+        #submit_bttn{
+            height: 2.2vh;
+            padding-left: 3%;
+            padding-right: 5%;
+        }
+    
+        #sign_up{
+            display: none;
+        }
+    
+        #login{
+            display: none;
+        }
+
+        #account{
+            display: none;
+        }
+    
+        #footer_container{
+            grid-template: 10vh / 1fr 3fr 1fr 1fr 1fr;
+            grid-template-areas: 
+                '. . .  account2 . ';
+                justify-content: center;
+                align-self: center;
+        }
+        
+        #about_us{
+            display: none;
+        }
+        #contact_us{
+            display: none;
+        }
+    
+        #policies{
+            display: none;
+        }
+        
+        #faq{
+            display: none;
+        }
+
+        .icon_logos{
+            display: none;
+        }
+
+        .tags{
+            text-align: center;
+            letter-spacing: 0.3vh;
+            font-size: 2vh;
+        }
+
+        .sports_icons{
+            height: 10vh;
+            width: 15vh;
+            justify-self: center;
+            align-self: auto;
+        }
+    }
+}
