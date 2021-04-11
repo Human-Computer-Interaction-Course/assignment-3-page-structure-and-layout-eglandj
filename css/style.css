@@ -278,6 +278,10 @@ h2:hover{
     border: 2px solid #FFB001;
 }
 
+#hamburger_container{
+    display: none;
+}
+
 /* footer containter starts here */
 #footer_container{
     display: grid;
@@ -415,12 +419,16 @@ h2:hover{
         font-size: 2vh;
     }
 
+    #hamburger_container{
+        display: block;
+    }
+
     #footer_container{
         grid-template: 10vh / 1fr 2fr 2fr 2fr 1fr 1fr 3fr 1fr;
         grid-template-areas: 
             '. about contact policies faq . icons';
-            justify-content: center;
-            align-self: center;
+        justify-content: center;
+        align-self: center;
     }
     
     #about_us{
@@ -492,6 +500,7 @@ h2:hover{
         }
 
         #hamburger_icon{
+            display: block;
             color: #FFB001;
             size: 100%;
         }
