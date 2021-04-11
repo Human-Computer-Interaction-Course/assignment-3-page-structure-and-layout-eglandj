@@ -420,7 +420,7 @@ h2:hover{
     }
 
     #hamburger_container{
-        display: block;
+        display: none;
     }
 
     #footer_container{
@@ -480,7 +480,7 @@ h2:hover{
         
         #grid_header{
             width: 100%;
-            grid-template: 4vh 4vh / 8vh 5fr 5fr 2fr;
+            grid-template: 4vh 4vh / 8vh 5fr 5fr 1fr 2fr 1fr;
             grid-template-areas: 
                 'logo title title hamburger'
                 'logo search . hamburger';
@@ -493,16 +493,16 @@ h2:hover{
         }
 
         #hamburger_container{
+            display: block;
             grid-area: hamburger;
-            float: right;
-            justify-content: center;
-            align-content: center;
+            justify-self: center;
+            align-self: center;
+            height: 3vh;
         }
 
+
         #hamburger_icon{
-            display: block;
             color: #FFB001;
-            size: 100%;
         }
     
         #search_bar{
