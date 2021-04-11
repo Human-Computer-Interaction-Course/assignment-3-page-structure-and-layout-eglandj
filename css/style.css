@@ -288,7 +288,7 @@ h2:hover{
     grid-template: 10vh / 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
     grid-template-areas: 
         '. about contact policies faq . icons';
-        justify-content: center;
+    justify-content: center;
 }
 
 /* Items wthin footer container */
@@ -373,6 +373,14 @@ h2:hover{
     justify-self: center;
 }
 
+#mobile_login_signup{
+    display: none;
+}
+
+#mobile_account{
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
 
     #main_container{
@@ -428,7 +436,6 @@ h2:hover{
         grid-template-areas: 
             '. about contact policies faq . icons';
         justify-content: center;
-        align-self: center;
     }
     
     #about_us{
@@ -446,6 +453,14 @@ h2:hover{
         font-size: 2vh;
     }
 
+    #mobile_login_signup{
+        display: none;
+    }
+
+    #mobile_account{
+        display: none;
+    }
+
     @media screen and (max-width: 360px) {
 
         #grid_container{
@@ -461,7 +476,7 @@ h2:hover{
             grid-template: auto auto auto auto auto / auto auto;
             justify-content:space-around;
             border-radius: 8vh;
-            padding-top: 0%;
+            padding-bottom: 15%;
         }
         
         #title{
@@ -474,13 +489,12 @@ h2:hover{
         }
         
         footer{
-            height: 13vh;
-            background-color: #0E0F1B;
+            height: 8vh;
         }
-        
+    
         #grid_header{
             width: 100%;
-            grid-template: 4vh 4vh / 8vh 5fr 5fr 1fr 2fr 1fr;
+            grid-template: 4vh 4vh / 8vh 5fr 5fr 1fr 1fr;
             grid-template-areas: 
                 'logo title title hamburger'
                 'logo search . hamburger';
@@ -499,7 +513,6 @@ h2:hover{
             align-self: center;
             height: 3vh;
         }
-
 
         #hamburger_icon{
             color: #FFB001;
@@ -529,14 +542,6 @@ h2:hover{
         #account{
             display: none;
         }
-    
-        #footer_container{
-            grid-template: 10vh / 1fr 3fr 1fr 1fr 1fr;
-            grid-template-areas: 
-                '. . .  account2 . ';
-                justify-content: center;
-                align-self: center;
-        }
         
         #about_us{
             display: none;
@@ -563,11 +568,35 @@ h2:hover{
             font-size: 2vh;
         }
 
+        #icon_container{
+            display: none;
+        }
+
         .sports_icons{
             height: 10vh;
             width: 15vh;
             justify-self: center;
             align-self: auto;
+        }
+
+        
+        #footer_container{
+            display: grid;
+            grid-template: 8vh / 3fr 1fr;
+            grid-area: 'login/signup .';
+        }
+
+
+        #mobile_login_signup{
+            display: inheritg;
+            height: 100%;
+            grid-area: login/signup;
+            justify-self: center;
+        }
+
+        #mobile_account{
+            grid-area: account2;
+            display: none;
         }
     }
 }
